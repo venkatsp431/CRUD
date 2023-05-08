@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Base from "../Base/base";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 function AddStudent({ students, setStudents }) {
   const history = useHistory();
@@ -41,31 +43,41 @@ function AddStudent({ students, setStudents }) {
       description={"Enter all details to add a student"}
     >
       <div className="input-details">
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Batch"
-          value={batch}
-          onChange={(e) => setBatch(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Qualification"
-          value={qualification}
-          onChange={(e) => setQualification(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Gender"
-          value={gender}
-          onChange={(e) => setGender(e.target.value)}
-        />
-        <button onClick={() => addstudent()}>Add</button>
+        <Form>
+          <Form.Group className="my-3">
+            <Form.Control
+              type="text"
+              placeholder="Name"
+              className="mb-4"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Form.Control
+              type="text"
+              placeholder="Batch"
+              className="mb-4"
+              value={batch}
+              onChange={(e) => setBatch(e.target.value)}
+            />
+            <Form.Control
+              type="text"
+              placeholder="Qualification"
+              className="mb-4"
+              value={qualification}
+              onChange={(e) => setQualification(e.target.value)}
+            />
+            <Form.Control
+              type="text"
+              placeholder="Gender"
+              className="mb-4"
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+            />
+          </Form.Group>
+        </Form>
+        <Button variant="primary" type="submit" onClick={() => addstudent()}>
+          Add
+        </Button>
       </div>
     </Base>
   );

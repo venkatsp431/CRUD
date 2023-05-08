@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import Base from "../Base/base";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 export default function UpdateFunction({ students, setStudents }) {
   const { id } = useParams();
@@ -47,32 +49,42 @@ export default function UpdateFunction({ students, setStudents }) {
       title={"Edit Student"}
       description={"Fill Correct details to edit a student"}
     >
-      <div className="input-group">
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Batch"
-          value={batch}
-          onChange={(e) => setBatch(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Qualification"
-          value={qualification}
-          onChange={(e) => setQualification(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Gender"
-          value={gender}
-          onChange={(e) => setGender(e.target.value)}
-        />
-        <button onClick={updateStudent}>Update</button>
+      <div className="input-details">
+        <Form>
+          <Form.Group className="my-3">
+            <Form.Control
+              type="text"
+              placeholder="Name"
+              className="mb-4"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Form.Control
+              type="text"
+              placeholder="Batch"
+              className="mb-4"
+              value={batch}
+              onChange={(e) => setBatch(e.target.value)}
+            />
+            <Form.Control
+              type="text"
+              placeholder="Qualification"
+              className="mb-4"
+              value={qualification}
+              onChange={(e) => setQualification(e.target.value)}
+            />
+            <Form.Control
+              type="text"
+              placeholder="Gender"
+              className="mb-4"
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+            />
+          </Form.Group>
+        </Form>
+        <Button variant="primary" type="submit" onClick={updateStudent}>
+          Add
+        </Button>
       </div>
     </Base>
   );

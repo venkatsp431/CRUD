@@ -6,6 +6,7 @@ import UpdateFunction from "./Components/updateStudent";
 import { Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Dashboard } from "./Components/dashboard";
+import Teachers from "./Components/teachers";
 
 function App() {
   const [students, setStudents] = useState([]);
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/students">
           <Students students={students} setStudents={setStudents} />
+        </Route>
+        <Route path="/teachers">
+          <Teachers />
         </Route>
         <Route path="/add">
           <AddStudent students={students} setStudents={setStudents} />
