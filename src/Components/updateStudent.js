@@ -83,7 +83,7 @@ export default function UpdateFunction({ students, setStudents }) {
           </Form.Group>
         </Form>
         <Button variant="primary" type="submit" onClick={updateStudent}>
-          Add
+          Add Students
         </Button>
       </div>
     </Base>
